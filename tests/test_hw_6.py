@@ -93,7 +93,13 @@ def test_find_suitable_user():
 '''
 
 
+def my_function_args(name, *args):
+    my_func = name.__name__
+    my_func.replace("_", " ").title()
+    argm = ", ".join(args)
 
+    result = f'{name}, {argm}'
+    print(result)
 
 
 def test_readable_function():
@@ -120,10 +126,3 @@ def find_registration_button_on_login_page(page_url, button_text):
     assert actual_result ==\
            "Find Registration Button On Login Page [https://companyname.com/login, Register]"
 
-def my_function_args(name, *args):
-    my_func = name.__name__
-    my_func.replace("_", " ").title()
-    argm = ", ".join(args)
-
-    result = f'{name}, {argm}'
-    print(result)
