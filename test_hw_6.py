@@ -1,4 +1,3 @@
-import pprint
 from datetime import time
 
 
@@ -100,7 +99,6 @@ def test_readable_function():
         page_url="https://companyname.com/login",
         button_text="Register"
     )
-
 
 def open_browser(browser_name):
     actual_result = my_function_args(open_browser, browser_name)
