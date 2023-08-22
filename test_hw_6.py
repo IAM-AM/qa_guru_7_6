@@ -57,21 +57,15 @@ def test_find_suitable_user():
     ]
 
     # TODO найдите пользователя с именем "Olga"
-
     suitable_users = None
     for user in users:
         if user["func"] == "Olga":
             suitable_users = user
 
     assert suitable_users == {"func": "Olga", "age": 45}
-    return suitable_users
 
     # TODO найдите всех пользователей младше 20 лет
-    suitable_users = None
-
-    for user in users:
-        if user["age"] < 20:
-            return suitable_users
+    suitable_users = [user for user in users if user["age"] < 20]
 
     assert suitable_users == [
         {"func": "Stanislav", "age": 15},
@@ -95,10 +89,8 @@ def test_find_suitable_user():
 def test_readable_function():
     open_browser(browser_name="Chrome")
     go_to_companyname_homepage(page_url="https://companyname.com")
-    find_registration_button_on_login_page(
-        page_url="https://companyname.com/login",
-        button_text="Register"
-    )
+    find_registration_button_on_login_page(page_url="https://companyname.com/login", button_text="Register")
+
 
 def open_browser(browser_name):
     actual_result = my_function_args(open_browser, browser_name)
@@ -112,7 +104,7 @@ def go_to_companyname_homepage(page_url):
 
 def find_registration_button_on_login_page(page_url, button_text):
     actual_result = my_function_args(find_registration_button_on_login_page, page_url, button_text)
-    assert actual_result == "Find Registration Button On Login Page [https:/x   /companyname.com/login, Register]"
+    assert actual_result == "Find Registration Button On Login Page [https://companyname.com/login, Register]"
 
 
 def my_function_args(func, *args):
