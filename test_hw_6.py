@@ -49,27 +49,27 @@ def test_find_suitable_user():
     Найдите нужного пользователя по условиям в списке пользователей
     """
     users = [
-        {"func": "Oleg", "age": 32},
-        {"func": "Sergey", "age": 24},
-        {"func": "Stanislav", "age": 15},
-        {"func": "Olga", "age": 45},
-        {"func": "Maria", "age": 18},
+        {"name": "Oleg", "age": 32},
+        {"name": "Sergey", "age": 24},
+        {"name": "Stanislav", "age": 15},
+        {"name": "Olga", "age": 45},
+        {"name": "Maria", "age": 18},
     ]
 
     # TODO найдите пользователя с именем "Olga"
     suitable_users = None
     for user in users:
-        if user["func"] == "Olga":
+        if user["name"] == "Olga":
             suitable_users = user
 
-    assert suitable_users == {"func": "Olga", "age": 45}
+    assert suitable_users == {"name": "Olga", "age": 45}
 
     # TODO найдите всех пользователей младше 20 лет
     suitable_users = [user for user in users if user["age"] < 20]
 
     assert suitable_users == [
-        {"func": "Stanislav", "age": 15},
-        {"func": "Maria", "age": 18},
+        {"name": "Stanislav", "age": 15},
+        {"name": "Maria", "age": 18},
     ]
 
 
